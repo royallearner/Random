@@ -14,6 +14,8 @@ def quick_sort(arr, low, high):
         quick_sort(arr, low, p - 1)
         quick_sort(arr, p + 1, high)
 
-arr = [1, 7, 4, 1, 10, 9, -2]
-quick_sort(arr, 0, len(arr) - 1)
-print(arr)
+
+if __name__ == "__main__":
+    arr = [1, 7, 4, 1, 10, 9, -2]
+    quick_sort(arr, 0, len(arr) - 1)
+    print(arr)

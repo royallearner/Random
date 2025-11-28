@@ -28,6 +28,8 @@ def merge(arr, L, R):
         j += 1
         k += 1
 
-arr = [38, 27, 43, 3, 9, 82, 10]
-mergesort(arr) 
-print("Sorted array is:", arr)
+
+if __name__ == "__main__":
+    arr = [38, 27, 43, 3, 9, 82, 10]
+    mergesort(arr) 
+    print("Sorted array is:", arr)

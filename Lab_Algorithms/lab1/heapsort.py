@@ -21,19 +21,19 @@ def heapSort(arr):
         heapify(arr, i)
         print("Sorted array is:", arr)
 
-
     for i in range(n - 1, 0, -1):
         arr[i], arr[0] = arr[0], arr[i]  # Swap max to end
         heapify(arr, 0)
 
-arr = [12, 11, 13, 5, 6, 7]
-heapSort(arr)
-print("Sorted array is:", arr)
+if __name__ == "__main__":
+    arr = [12, 11, 13, 5, 6, 7]
+    heapSort(arr)
+    print("Sorted array is:", arr)
 
 
 ######################
-import heapq
+# import heapq
 
-arr = [12, 11, 13, 5, 6, 7]
-heapq.heapify(arr)
-print("Heapified array is:", arr)
+# arr = [12, 11, 13, 5, 6, 7]
+# heapq.heapify(arr)
+# print("Heapified array is:", arr)

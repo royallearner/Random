@@ -1,6 +1,4 @@
-# Lab 10: N-Queens Problem – Backtracking
-
-def is_safe(board, row, col, n):
+def is_safe(board, row, col):
     # check column
     for i in range(row):
         if board[i] == col:
@@ -16,15 +14,16 @@ def solve_nqueens(row, n, board, solutions):
         solutions.append(board[:])
         return
     for col in range(n):
-        if is_safe(board, row, col, n):
+        if is_safe(board, row, col):
             board[row] = col
             solve_nqueens(row + 1, n, board, solutions)
 
-n = 4
-board = [-1] * n
-solutions = []
-solve_nqueens(0, n, board, solutions)
+if __name__ == "__main__":
+    n = 4
+    board = [-1] * n
+    solutions = []
+    solve_nqueens(0, n, board, solutions)
 
-print("Solutions for", n, "queens (row -> col):")
-for sol in solutions:
-    print(sol)
+    print("Solutions for", n, "queens (row -> col):")
+    for sol in solutions:
+       print(sol)
