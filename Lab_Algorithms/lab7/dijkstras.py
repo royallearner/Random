@@ -4,6 +4,7 @@ import heapq
 def dijkstras(graph, start):
     V = len(graph)
     distances = [float('inf')] * V
+    
     distances[start] = 0
     priority_queue = [(0, start)]  # (distance, vertex)
 
@@ -13,6 +14,7 @@ def dijkstras(graph, start):
         # if current_distance > distances[current_vertex]:
         #     continue
 
+        #relaxation
         for neighbor in range(V):
             weight = graph[current_vertex][neighbor]
             if weight != float('inf'):

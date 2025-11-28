@@ -1,5 +1,3 @@
-# floyd warshall algorith in python
-
 def floyd_warshall(graph):
     # number of vertices in the graph
     V = len(graph)

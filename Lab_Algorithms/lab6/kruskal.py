@@ -10,13 +10,8 @@ def comparator(a,b):
     return a[2] - b[2]
 
 def kruskals_mst(V, edges):
-    print("Kruskal's MST algorithm")
-    print(edges)
     # Sort all edges
     edges = sorted(edges,key=cmp_to_key(comparator))
-    print("Edges in sorted order are:")
-    print(edges)
-
     
     # Traverse edges in sorted order
     dsu = DSU(V)

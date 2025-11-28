@@ -14,4 +14,5 @@ def knapsackdp(weights,  Values, Capacity):
 if __name__ == "__main__":
     Values = [20, 25, 40]
     weights = [25, 20, 30]
-    print(knapsackdp(weights,Values,50))
+    capacity = 50
+    print("Max Profit: ",knapsackdp(weights,Values,capacity))
