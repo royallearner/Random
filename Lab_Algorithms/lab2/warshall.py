@@ -5,7 +5,7 @@ def floyd_warshall(graph):
     V = len(graph)
     
     # initialize closure_graph distance matrix with graph values
-    closure_graph = [[float('inf')] * V for _ in range(V)]
+    closure_graph = [[0] * V for _ in range(V)]
     
     for i in range(V):
         for j in range(V):
@@ -15,15 +15,14 @@ def floyd_warshall(graph):
     # for i in range(V):
     #     closure_graph[i][i] = 0
     
-    # update distances using Floyd-Warshall algorithm
+    # update distance reachability using Floyd-Warshall algorithm
     for k in range(V):
         for i in range(V):
             for j in range(V):
                 if i == j:
                     closure_graph[i][i] = 0
                 else:
-                    if closure_graph[i][k] + closure_graph[k][j] < closure_graph[i][j]:
-                        closure_graph[i][j] = closure_graph[i][k] + closure_graph[k][j]
+                    closure_graph[i][j] = 1 if closure_graph[i][j] or (closure_graph[i][k] and closure_graph[k][j]) else 0
     
     return closure_graph
 
@@ -40,13 +39,16 @@ def print_graph(graph):
 # Example usage
 if __name__ == "__main__":
     graph = [
-        [0, 3, float('inf'), 7],
-        [8, 0, 2, float('inf')],
-        [5, float('inf'), 0, 1],
-        [2, float('inf'), float('inf'), 0]
+        [0, 3, 0, 7],
+        [8, 0, 2, 0],
+        [5, 0, 0, 1],
+        [2, 0, 0, 0]
     ]
     
     closure_graph = floyd_warshall(graph)
-    print("The shortest distance matrix is:")
-    print_graph(closure_graph )
+    print("\nAdjacency Matrix:")
+    print_graph(graph)
+    
+    print("\nTransitive Closure (Reachability) Matrix:")
+    print_graph(closure_graph)
     
